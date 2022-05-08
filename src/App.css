@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display+SC");
+
+.App {
+  padding: 1em;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+}
+
+header {
+  background-color: #2364aa;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-family: "Playfair Display SC";
+  text-align: center;
+  font-size: 64px;
+  margin: 0 0 0 0;
+  padding: 2%;
+}
+
+/* typography */
+
+html {
+  font-family: "helvetica neue", sans-serif;
+}
+
+thead th,
+tfoot th {
+  font-family: "Rock Salt";
+}
+
+th {
+  letter-spacing: 2px;
+  padding: 10px;
+}
+
+td {
+  letter-spacing: 1px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-size: 12px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* table */
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.content_td p {
+  max-width: 100%;
+  max-height: 100px;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+}
+
+/* Column Size for thead */
+.recipe-list tr th {
+  background-color: #ea7317;
+  height: 10%;
+}
+
+.recipe-list tbody tr:nth-child(odd) {
+  background-color: #fec601;
+}
+
+/* Column size for tbody */
+.recipe td:nth-child() {
+  width: 10%;
+}
+.recipe td:nth-child(4 + 1) {
+  width: 30%;
+}
+.recipe td p {
+  font-size: 1.75em;
+}
+
+.recipe img {
+  width: 100%;
+  align-self: center;
+}
+
+.recipe button {
+  font-size: 1.75em;
+  width: 80%;
+  padding: 5%;
+}
+
+.recipeForm {
+  background-color: #3da5d9;
+  width: 100%;
+  margin: 0 0 0 0;
+}
+
+.recipeForm td input {
+  padding: 5%;
+  width: 100%;
+  align-self: center;
+}
+
+.recipeForm td textarea {
+  align-self: center;
+  padding: 5%;
+  width: 100%;
+}
+
+.recipeForm button {
+  font-size: 1.75em;
+  width: 80%;
+  padding: 5%;
+}

@@ -1,0 +1,144 @@
+import React, { useState } from "react";
+
+function RecipeCreate({ submitRecipe }) {
+  // TODO: Add the required input and textarea form elements.
+
+  /*
+  const [recipe, setRecipe] = useState({
+    name: "",
+    cuisine: "",
+    photo: "",
+    ingredients: "",
+    preparation: "",
+  })
+  */
+  const initialRecipe = {
+    name: "",
+    cuisine: "",
+    photo: "",
+    ingredients: "",
+    preparation: "",
+  }
+
+  const [name, setName] = useState("");
+  const [cuisine, setCuisine] = useState("");
+  const [photo, setPhoto] = useState("");
+  const [ingredients, setIngredients] = useState("");
+  const [preparation, setPrep] = useState("");
+
+
+  // TODO: When the form is submitted, a new recipe should be created, and the form contents cleared.
+  function createRecipe(event) {
+    
+    const id = Date.now();
+
+    const recipe = {
+      id: id,
+      name: name,
+      cuisine: cuisine,
+      photo: photo,
+      ingredients: ingredients,
+      preparation: preparation,
+    }
+    
+    return recipe;
+  }
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const recipe = createRecipe(event);
+
+    setName(initialRecipe.name)
+    setCuisine(initialRecipe.cuisine)
+    setPhoto(initialRecipe.photo)
+    setIngredients(initialRecipe.ingredients)
+    setPrep(initialRecipe.preparation)
+
+    submitRecipe(recipe);
+  };
+
+  // TODO: Add the required submit and change handlers
+  const handleType = (event) => {
+    /* const key = event.target.name;
+    let value = event.target.value;
+    setRecipe({ key: value })
+    */
+    switch (event.target.name) {
+      case "name":
+        setName(event.target.value);
+        break;
+      case "cuisine":
+        setCuisine(event.target.value);
+        break;
+      case "photo":
+        setPhoto(event.target.value);
+        break;
+      case "ingredients":
+        setIngredients(event.target.value);
+        break;
+      case "preparation":
+        setPrep(event.target.value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  return (
+    <form name="create" onSubmit={submitHandler} >
+      <table className="recipeForm">
+        <tbody>
+          <tr>
+            <td>
+              <input
+                type="text"
+                name="name"
+                value={name}
+                onChange={handleType}
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                name="cuisine"
+                value={cuisine}
+                onChange={handleType}
+              />
+            </td>
+            <td>
+              <input
+                type="url"
+                name="photo"
+                value={photo}
+                onChange={handleType}
+              />
+            </td>
+            <td>
+              <textarea
+                type="text"
+                name="ingredients"
+                value={ingredients}
+                onChange={handleType}
+              ></textarea>
+            </td>
+            <td>
+              <textarea
+                type="text"
+                name="preparation"
+                value={preparation}
+                onChange={handleType}
+              ></textarea>
+            </td>
+            <td>
+              <button type="submit" >
+                Create
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  );
+}
+
+export default RecipeCreate;
