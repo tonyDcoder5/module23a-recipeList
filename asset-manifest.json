@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/module23a-recipeList/static/css/main.87bb9811.css",
+    "main.js": "/module23a-recipeList/static/js/main.52c0ba42.js",
+    "index.html": "/module23a-recipeList/index.html",
+    "main.87bb9811.css.map": "/module23a-recipeList/static/css/main.87bb9811.css.map",
+    "main.52c0ba42.js.map": "/module23a-recipeList/static/js/main.52c0ba42.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.87bb9811.css",
+    "static/js/main.52c0ba42.js"
+  ]
+}
