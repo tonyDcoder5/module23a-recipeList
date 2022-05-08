@@ -94,6 +94,7 @@ function RecipeCreate({ submitRecipe }) {
                 type="text"
                 name="name"
                 value={name}
+                placeholder="Recipe Name"
                 onChange={handleType}
               />
             </td>
@@ -101,6 +102,7 @@ function RecipeCreate({ submitRecipe }) {
               <input
                 type="text"
                 name="cuisine"
+                placeholder="Cuisine"
                 value={cuisine}
                 onChange={handleType}
               />
@@ -109,6 +111,7 @@ function RecipeCreate({ submitRecipe }) {
               <input
                 type="url"
                 name="photo"
+                placeholder="URL"
                 value={photo}
                 onChange={handleType}
               />
@@ -117,6 +120,7 @@ function RecipeCreate({ submitRecipe }) {
               <textarea
                 type="text"
                 name="ingredients"
+                placeholder="Recipe Ingredients"
                 value={ingredients}
                 onChange={handleType}
               ></textarea>
@@ -125,6 +129,7 @@ function RecipeCreate({ submitRecipe }) {
               <textarea
                 type="text"
                 name="preparation"
+                placeholder="Preparation Instructions"
                 value={preparation}
                 onChange={handleType}
               ></textarea>
