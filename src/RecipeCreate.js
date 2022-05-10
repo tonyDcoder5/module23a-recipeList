@@ -3,22 +3,13 @@ import React, { useState } from "react";
 function RecipeCreate({ submitRecipe }) {
   // TODO: Add the required input and textarea form elements.
 
-  /*
-  const [recipe, setRecipe] = useState({
-    name: "",
-    cuisine: "",
-    photo: "",
-    ingredients: "",
-    preparation: "",
-  })
-  */
   const initialRecipe = {
     name: "",
     cuisine: "",
     photo: "",
     ingredients: "",
     preparation: "",
-  }
+  };
 
   const [name, setName] = useState("");
   const [cuisine, setCuisine] = useState("");
@@ -26,10 +17,8 @@ function RecipeCreate({ submitRecipe }) {
   const [ingredients, setIngredients] = useState("");
   const [preparation, setPrep] = useState("");
 
-
   // TODO: When the form is submitted, a new recipe should be created, and the form contents cleared.
   function createRecipe(event) {
-    
     const id = Date.now();
 
     const recipe = {
@@ -39,8 +28,8 @@ function RecipeCreate({ submitRecipe }) {
       photo: photo,
       ingredients: ingredients,
       preparation: preparation,
-    }
-    
+    };
+
     return recipe;
   }
 
@@ -48,21 +37,19 @@ function RecipeCreate({ submitRecipe }) {
     event.preventDefault();
     const recipe = createRecipe(event);
 
-    setName(initialRecipe.name)
-    setCuisine(initialRecipe.cuisine)
-    setPhoto(initialRecipe.photo)
-    setIngredients(initialRecipe.ingredients)
-    setPrep(initialRecipe.preparation)
+
+    setName(initialRecipe.name);
+    setCuisine(initialRecipe.cuisine);
+    setPhoto(initialRecipe.photo);
+    setIngredients(initialRecipe.ingredients);
+    setPrep(initialRecipe.preparation);
+
 
     submitRecipe(recipe);
   };
 
   // TODO: Add the required submit and change handlers
   const handleType = (event) => {
-    /* const key = event.target.name;
-    let value = event.target.value;
-    setRecipe({ key: value })
-    */
     switch (event.target.name) {
       case "name":
         setName(event.target.value);
@@ -85,7 +72,7 @@ function RecipeCreate({ submitRecipe }) {
   };
 
   return (
-    <form name="create" onSubmit={submitHandler} >
+    <form name="create" onSubmit={submitHandler}>
       <table className="recipeForm">
         <tbody>
           <tr>
@@ -96,6 +83,7 @@ function RecipeCreate({ submitRecipe }) {
                 value={name}
                 placeholder="Recipe Name"
                 onChange={handleType}
+                required
               />
             </td>
             <td>
@@ -105,6 +93,7 @@ function RecipeCreate({ submitRecipe }) {
                 placeholder="Cuisine"
                 value={cuisine}
                 onChange={handleType}
+                required
               />
             </td>
             <td>
@@ -114,6 +103,7 @@ function RecipeCreate({ submitRecipe }) {
                 placeholder="URL"
                 value={photo}
                 onChange={handleType}
+                required
               />
             </td>
             <td>
@@ -123,6 +113,7 @@ function RecipeCreate({ submitRecipe }) {
                 placeholder="Recipe Ingredients"
                 value={ingredients}
                 onChange={handleType}
+                required
               ></textarea>
             </td>
             <td>
@@ -132,12 +123,11 @@ function RecipeCreate({ submitRecipe }) {
                 placeholder="Preparation Instructions"
                 value={preparation}
                 onChange={handleType}
+                required
               ></textarea>
             </td>
             <td>
-              <button type="submit" >
-                Create
-              </button>
+              <button type="submit">Create</button>
             </td>
           </tr>
         </tbody>

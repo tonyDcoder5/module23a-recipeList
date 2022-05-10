@@ -8,8 +8,8 @@ function App() {
   const [recipes, setRecipes] = useState(RecipeData);
 
   // TODO: Add the ability for the <RecipeList /> component to list and delete an existing recipe.
-  const deleteRecipe = (name) => {
-    setRecipes(recipes.filter(recipe => recipe.name !== name))
+  const deleteRecipe = (id) => {
+    setRecipes(recipes.filter((recipe) => recipe.id !== id))
   }
   
   // TODO: Add the ability for the <RecipeCreate /> component to create new recipes.
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <header><h1>Delicious Food Recipes</h1></header>
-      <RecipeList recipes={recipes} deleteRecipe={deleteRecipe}/>
+      <RecipeList recipes={recipes} deleteRecipe={deleteRecipe} />
       <RecipeCreate submitRecipe={submitRecipe} />
     </div>
   );

@@ -3,7 +3,7 @@ import React from "react";
 function Recipe ({recipe, deleteHandle}){
 
     const deleteRecipe = () => {
-        deleteHandle(recipe.name);
+        deleteHandle(recipe.id);
     }
 
 
